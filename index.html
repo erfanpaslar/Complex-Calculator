@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Complex Calculator</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="calcContainer">
+      <div class="calculator">
+        <input
+          id="input"
+          class="input"
+          type="text"
+          placeholder="Hit 'h' for hint"
+          readonly
+        />
+        <br />
+        <div class="btnsContainer">
+          <button onclick="validateInput('h')" class="btn btnHint">hint</button>
+          <button onclick="validateInput('rct')" class="btn">rct</button>
+          <button onclick="validateInput('tri')" class="btn">tri</button>
+          <button onclick="validateInput('^')" class="btn">^</button>
+          <button onclick="validateInput('7')" class="btn num">7</button>
+          <button onclick="validateInput('8')" class="btn num">8</button>
+          <button onclick="validateInput('9')" class="btn num">9</button>
+          <button onclick="validateInput('+')" class="btn">+</button>
+          <button onclick="validateInput('4')" class="btn num">4</button>
+          <button onclick="validateInput('5')" class="btn num">5</button>
+          <button onclick="validateInput('6')" class="btn num">6</button>
+          <button onclick="validateInput('-')" class="btn">-</button>
+          <button onclick="validateInput('1')" class="btn num">1</button>
+          <button onclick="validateInput('2')" class="btn num">2</button>
+          <button onclick="validateInput('3')" class="btn num">3</button>
+          <button onclick="validateInput('/')" class="btn">/</button>
+          <button onclick="validateInput('.')" class="btn">.</button>
+          <button onclick="validateInput('0')" class="btn num">0</button>
+          <button onclick="validateInput('i')" class="btn">i</button>
+          <button onclick="validateInput('*')" class="btn">*</button>
+          <button onclick="validateInput('eq')" class="btn">eq</button>
+          <button onclick="validateInput('z')" class="btn">z</button>
+          <button onclick="validateInput('e')" class="btn">e</button>
+          <button onclick="validateInput('Backspace')" class="btn clear">
+            &#8592;
+          </button>
+
+          <button onclick="validateInput('(')" class="btn">(</button>
+          <button onclick="validateInput(')')" class="btn">)</button>
+          <button onclick="validateInput('Enter')" class="btn Enter">=</button>
+        </div>
+      </div>
+    </div>
+    <div class="result">
+      Result
+      <div id="res" class="res"></div>
+    </div>
+    <div id="steps" class="steps">
+      <div style="text-align: center">Steps</div>
+    </div>
+    <div id="hint" class="hint hide">
+      <span onclick="toggleHint()" class="close">x</span>
+      <h1>Complex Calculator</h1>
+      <p>
+        This is a simple complex numbers calculator that gets inputs like
+        <strong>1+i+(2i-1)*2^3</strong> and shows the result and steps in
+        <span style="color: gold">realtime</span>.
+      </p>
+      <p style="color: rgb(89, 180, 255); font-size: 1.2rem">
+        There are some rules you should obey to get the correct result:
+      </p>
+      <p>
+        For the polar representation you should use sth like this:
+        <span style="color: rgb(91, 255, 70)">2*e^(45i)</span> not
+        <span style="color: #ff2626">2e^(45i)</span> not
+        <span style="color: #ff2626">2*e^45i</span> and the θ should be in
+        <strong style="color: gold">degree</strong> not radiant so
+        <span style="color: rgb(91, 255, 70)">e^(180i) = -1</span>. but for
+        regular powers you could use both
+        <span style="color: rgb(91, 255, 70)">2^(5)</span> and
+        <span style="color: rgb(91, 255, 70)">2^5</span>.
+      </p>
+      <p>
+        For multiply always use *, for example use this
+        <span style="color: rgb(91, 255, 70)">2*(3+1)</span> not
+        <span style="color: #ff2626">2(3+1)</span>. you can use both 5i and 5*i.
+      </p>
+      <p>
+        Fro the equation part you need to use inputs like this
+        <span style="color: rgb(91, 255, 70)">z^(5)=i</span> not
+        <span style="color: #ff2626">z^5=i</span> nor
+        <span style="color: #ff2626">z^(5)-i=0</span>
+      </p>
+    </div>
+    <script src="js/funcs.js"></script>
+    <script src="js/complex.js"></script>
+    <script src="js/yard.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
