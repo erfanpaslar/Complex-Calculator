@@ -26,4 +26,4 @@ and it shows z0=1, z1=-1, z2=i, z3=-1
 </figure>
 </span>
 
-It runs on https://erfanpaslar.ir/cc
+It runs on https://erfanpaslar.github.io/Complex-Calculator
